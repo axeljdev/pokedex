@@ -39,8 +39,9 @@ function App() {
       <PokemonCard pokemon={pokemonList[pokemonIndex]} />
       <NavBar pokemonIndex={pokemonIndex}
         pokemonList={pokemonList}
-        handleClickNext={() => setPokemonIndex(pokemonIndex + 1)}
-        handleClickPrevious={() => setPokemonIndex(pokemonIndex - 1)} />
+        setPokemonIndex={setPokemonIndex}
+        
+      />
     </>
 
   );

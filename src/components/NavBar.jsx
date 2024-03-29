@@ -1,10 +1,12 @@
 
-function NavBar({ handleClickPrevious, handleClickNext, pokemonIndex, pokemonList }) {
+function NavBar({ pokemonList, setPokemonIndex }) {
+
+    const handleClick = (index) => {
+        setPokemonIndex(index)
+    }
     return (
         <>
-            { pokemonIndex > 0 &&  <button type="button" onClick={handleClickPrevious}>précédents</button>}
-            { pokemonIndex < pokemonList.length - 1 &&  <button type="button" onClick={handleClickNext}>suivants</button>}
-
+            {pokemonList.map((pokemon, index) => <button onClick={() => handleClick(index)} key={pokemon.name}>{pokemon.name}</button>)}
         </>
     )
 }
